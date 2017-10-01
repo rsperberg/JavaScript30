@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <div class="keys">
+    <div data-key="a" class="key">
+      <kbd>A</kbd>
+      <span class="sound">clap</span>
+    </div>
+    <div data-key="s" class="key">
+      <kbd>S</kbd>
+      <span class="sound">hihat</span>
+    </div>
+    <div data-key="d" class="key">
+      <kbd>D</kbd>
+      <span class="sound">kick</span>
+    </div>
+    <div data-key="f" class="key">
+      <kbd>F</kbd>
+      <span class="sound">openhat</span>
+    </div>
+    <div data-key="g" class="key">
+      <kbd>G</kbd>
+      <span class="sound">boom</span>
+    </div>
+    <div data-key="h" class="key">
+      <kbd>H</kbd>
+      <span class="sound">ride</span>
+    </div>
+    <div data-key="j" class="key">
+      <kbd>J</kbd>
+      <span class="sound">snare</span>
+    </div>
+    <div data-key="k" class="key">
+      <kbd>K</kbd>
+      <span class="sound">tom</span>
+    </div>
+    <div data-key="l" class="key">
+      <kbd>L</kbd>
+      <span class="sound">tink</span>
+    </div>
+  </div>
+
+  <audio id="soundClip" data-key="a" src="sounds/clap.wav"></audio>
+
+<script>
+var sounds = {
+  "a" : "sounds/clap.wav",
+  "s" : "sounds/hihat.wav",
+  "d" : "sounds/kick.wav",
+  "f" : "sounds/openhat.wav",
+  "g" : "sounds/boom.wav",
+  "h" : "sounds/ride.wav",
+  "j" : "sounds/snare.wav",
+  "k" : "sounds/tom.wav",
+  "l" : "sounds/tink.wav"
+}
+
+document.addEventListener('keydown', function(event) {
+  var audio = document.getElementById('soundClip');
+  audio.src = sounds[event.key];
+  audio.play();
+});
+
+</script>
+
+
+</body>
+</html>
